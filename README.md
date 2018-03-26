@@ -25,7 +25,7 @@ git clone https://github.com/edqbao/wonderQ.git
 Install node_modules
 
 ```
-npm init
+npm install
 ```
 
 Start Watcher
