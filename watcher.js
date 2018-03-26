@@ -25,7 +25,7 @@ client.on("monitor", function (time, args, raw_reply) {
       if (args[0] == 'lpush' && args[1] != 'queue'){
         setTimeout(function() {
             addq(JSON.parse(args[2]).message,JSON.parse(args[2]).messageId)
-        }, 5000);
+        }, 30000);
       }
     }
 
