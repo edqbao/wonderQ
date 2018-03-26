@@ -44,7 +44,7 @@ Watcher must be running
 
 ```
 npm run queue printq
-or 
+or
 node server.js printq
 ```
 
@@ -52,7 +52,7 @@ Shows current state of message queue
 
 ```
 npm run queue addq <message>
-or 
+or
 node server.js addq <message>
 ```
 
@@ -60,21 +60,21 @@ Adds message to queue, returns messageId of message
 
 ```
 npm run queue recieve
-or 
+or
 node server.js recieve
 ```
 
-Consumer recieves a message in queue
-Message added to consumer's reception queue
+Consumer recieves a message in queue <br />
+Message added to consumer's reception queue <br />
 Message made unavailable to other consumers until Timeout
 
 ```
 npm run queue remove <messageId>
-or 
+or
 node server.js remove <messageId>
 ```
 
-Consumer processes a message and is permanently deleted from queue
+Consumer processes a message and is permanently deleted from queue <br />
 If message has not been recieved, do nothing.
 
 ## Potential API Endpoints
@@ -84,7 +84,7 @@ Return state or other information regarding the queue
 
 #### GET/message
 Analogous to recieve; respond with first message of queue
-Potential option to set timeout 
+Potential option to set timeout
 
 #### GET/message
 Post a message to the queue
@@ -97,17 +97,17 @@ Delete message with id messageId
 addq appends message and messageId object to end of Redis list
 
 #### Consumer reads message with recieve operation
-recieve creates a new consumer queue of length 1 with the message recieved
-Sets timeout
-If message is not processed after timeout, pushes message back onto begining of queue
+recieve creates a new consumer queue of length 1 with the message recieved <br />
+Sets timeout <br />
+If message is not processed after timeout, pushes message back onto begining of queue <br />
 
 #### Consumer processes message with remove operation
-remove checks if a consumer queue for the message to be removed exists
-if consumer queue exists, deletes consumer queue
-timeout occurs, and without consumer queue existing, message cant be added back to queue
+remove checks if a consumer queue for the message to be removed exists <br />
+if consumer queue exists, deletes consumer queue <br />
+timeout occurs, and without consumer queue existing, message cant be added back to queue <br />
 
 ## System Scalability
-Redis is used as data store for this application
+Redis is used as data store for this application <br />
 Very high speeds for write and read operations using Redis to meet high volume message write and consumption
 
 ## Authors
